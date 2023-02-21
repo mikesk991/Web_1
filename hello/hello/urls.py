@@ -1,5 +1,6 @@
 from django.urls import path
 from firstapp import views
+from django.views.generic import TemplateView
 """hello URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -18,6 +19,10 @@ Including another URLconf
 
 urlpatterns = [
     path('', views.index),
+    path('about/', TemplateView.as_view(template_name="firstapp/about.html")),
+    path('contact/', TemplateView.as_view(template_name="firstapp/contact.html",
+                                          extra_context={"work":
+                                              "Разработка програмных продуктов"})),
 ]
 
 
