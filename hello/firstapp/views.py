@@ -1,10 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanentRedirect
+from django.template.response import TemplateResponse
 
 # Create your views here.
 
 def index(request):
-    return render(request, "firstapp\home.html")
+    return TemplateResponse(request, "firstapp\home.html")
 
 
 
