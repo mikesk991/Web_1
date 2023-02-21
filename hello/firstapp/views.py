@@ -1,11 +1,14 @@
-from django.shortcuts import render
+from django.template.response import TemplateResponse
 
 # Create your views here.
 
 def index(request):
-    data = {"header": "Передача параметров в шаблон Django",
-            "message": "Загружен шаблон templates/firstapp/index_app1.html"}
-    return render(request, "firstapp/index_app1.html", context=data)
+    header = "Персональные данные"
+    langs = ["Английский","Немецкий","Испанский"]
+    user = {"name": "Максим", "age": 30}
+    addr = ("Виноградная", 23, 45)
+    data = {"header": header, "langs": langs, "user": user, "address": addr}
+    return TemplateResponse(request, "index.html", data)
 
 
 
