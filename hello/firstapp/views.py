@@ -4,13 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponsePermanen
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Index")
+    return render(request, "firstapp\home.html")
 
-def about(request):
-    return HttpResponse("About")
 
-def contact(request):
-    return HttpResponseRedirect("/about")
 
-def details(request):
-    return HttpResponsePermanentRedirect("/")
