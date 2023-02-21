@@ -12,10 +12,13 @@ def about(request):
 def contact(request):
     return HttpResponse("<h2>Контакты</h2>")
 
-def products(request, productid=1):
-    output = f"<h2> Продукт № {productid}</h2>"
+def products(request, productid):
+    category = request.GET.get("cat", "")
+    output = f"<h2> Продукт № {productid} Категория: {category}</h2>"
     return HttpResponse(output)
 
-def users(request, id=1, name="Максим"):
-    output = f"<h2>Пользователь</h2><h3>id: {id} Имя:{name}"
+def users(request):
+    id = request.GET.get("id", 1)
+    name = request.GET.get("name", "Максим")
+    output = f"<h2>Пользователь</h2><h3>id: {id} Имя:{name}</h3>"
     return HttpResponse(output)
