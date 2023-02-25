@@ -2,5 +2,6 @@ from django import forms
 
 
 class UserForm(forms.Form):
-   uuid_text = forms.UUIDField(label="Введите UUID",
-                               help_text="Формат xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx")
+   combo_text = forms.ComboField(label="Введите URL",
+                                 fields=(forms.URLField(),
+                                         forms.CharField(max_length=20)))
