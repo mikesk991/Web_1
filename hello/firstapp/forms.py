@@ -2,5 +2,5 @@ from django import forms
 
 
 class UserForm(forms.Form):
-   basket = forms.BooleanField(label="Положить товар в корзину", required=False)
+   vyb = forms.NullBooleanField(label="Вы поедете в Сочи этим летом?")
 
