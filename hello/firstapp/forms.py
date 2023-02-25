@@ -2,5 +2,6 @@ from django import forms
 
 
 class UserForm(forms.Form):
-   vyb = forms.NullBooleanField(label="Вы поедете в Сочи этим летом?")
+   name = forms.CharField(label="Имя клиента", required=False, max_length=15,
+                          min_length=3, help_text="ФИО не более 15 символов")
 
