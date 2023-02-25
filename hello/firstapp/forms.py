@@ -2,4 +2,4 @@ from django import forms
 
 
 class UserForm(forms.Form):
-  time_delta = forms.DurationField(label="Введите промежуток времени")
+  date_time = forms.SplitDateTimeField(label="Введите дату и время")
