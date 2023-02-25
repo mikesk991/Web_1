@@ -2,5 +2,5 @@ from django import forms
 
 
 class UserForm(forms.Form):
-   url_text = forms.URLField(label="Введите URL",
-                             help_text="Например http://www.google.com")
+   uuid_text = forms.UUIDField(label="Введите UUID",
+                               help_text="Формат xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx")
