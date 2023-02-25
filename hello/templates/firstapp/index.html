@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Форма Django!</title>
+    <title>Фopмa Django!</title>
 </head>
 <body>
+    <form method="POST">
+        {% csrf_token %}
     <table>
         {{ form }}
     </table>
+    <input type="submit" vаluе="Отправить" >
+</form>
 </body>
 </html>
