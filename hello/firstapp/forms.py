@@ -2,4 +2,4 @@ from django import forms
 
 
 class UserForm(forms.Form):
-   date = forms.DateField(label="Введите дату")
+   time = forms.TimeField(label="Введите время")
