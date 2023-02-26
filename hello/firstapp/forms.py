@@ -2,5 +2,5 @@ from django import forms
 
 
 class UserForm(forms.Form):
-    name = forms.CharField(label="Имя", initial="Введите ФИО")
-    age = forms.IntegerField(label="Возраст", initial=18)
+    name = forms.CharField(label="Имя", help_text="Введите ФИО")
+    age = forms.IntegerField(label="Возраст", help_text="Введите возраст")

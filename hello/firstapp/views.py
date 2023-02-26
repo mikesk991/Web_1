@@ -4,5 +4,5 @@ from django.shortcuts import render
 
 
 def index(request):
-    userform = UserForm(field_order=["age", "name"])
+    userform = UserForm()
     return render(request, "firstapp/index.html", {"form": userform})
