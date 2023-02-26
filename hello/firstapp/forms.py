@@ -2,6 +2,8 @@ from django import forms
 
 
 class UserForm(forms.Form):
-    ling = forms.ChoiceField(choices=((1, "Английский"),
-                                      (2, "Немецкий"),
-                                      (3, "Французский")), label="Выбирите язык")
+    city = forms.TypedChoiceField(choices=((1, "Москва"),
+                                           (2, "Воронеж"),
+                                           (3, "Курск")),
+                                  label="Выбирите город",
+                                  empty_value=None)
