@@ -1,7 +1,8 @@
+from django.http import *
 from .forms import UserForm
 from django.shortcuts import render
 
 
 def index(request):
-    userform = UserForm()
+    userform = UserForm(field_order=["age", "name"])
     return render(request, "firstapp/index.html", {"form": userform})
