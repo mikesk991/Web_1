@@ -2,4 +2,6 @@ from django import forms
 
 
 class UserForm(forms.Form):
-  num = forms.FloatField(label="Введите число")
+    ling = forms.ChoiceField(choices=((1, "Английский"),
+                                      (2, "Немецкий"),
+                                      (3, "Французский")), label="Выбирите язык")
