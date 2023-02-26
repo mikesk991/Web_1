@@ -2,8 +2,9 @@ from django import forms
 
 
 class UserForm(forms.Form):
-    country = forms.MultipleChoiceField(choices=((1, "Москва"),
-                                                 (2, "Воронеж"),
-                                                 (3, "Курск"),
-                                                 (4, "Россия")),
-                                        label="Выбирите страны")
+    city = forms.TypedMultipleChoiceField(choices=((1, "Москва"),
+                                                   (2, "Воронеж"),
+                                                   (3, "Курск"),
+                                                   (4, "Томск")),
+                                          label="Выбирите город",
+                                          empty_value=None)
