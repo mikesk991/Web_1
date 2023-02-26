@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Фopмa Django!</title>
+    <style>
+        .alert{color:red}
+        .form-group{margin: 10px 0;}
+        .form-group input{width:250px; height: 25px; border-radius: 10px;}
+    </style>
 </head>
+
 <body>
 <h2>Валидизация группы полей</h2>
     <form method="POST" novalidate>
@@ -12,7 +18,13 @@
         {% for field in form %}
             <div>{{ field.label_tag }}</div>
             <div>{{ field }}</div>
-            <div>{{ field.errors }}</div>
+            {% if field.errors %}
+                {% for error in field.errors %}
+                <div class="alert alert-danger">
+                    {{ error }}
+                </div>
+                {% endfor %}
+            {% endif %}
         {% endfor %}
     </div>
     <input type="submit" vаluе="Отправить" >
