@@ -1,13 +1,16 @@
 from django.http import *
-from .forms import UserForm
+from .models import Person
 from django.shortcuts import render
 
 
 def index(request):
-    userform = UserForm()
+    people = Person.objects.all()
+    return render(request, "index.html", {"people": people})
+
+def create(request):
     if request.method == "POST":
-        userform = UserForm(request.POST)
-        if userform.is_valid():
-            name = userform.cleaned_data["name"]
-            return HttpResponse(f"<h2>Имя введено корректно - {name}</h2>")
-    return render(request, "firstapp/index.html", {"form": userform})
+        klient = Person()
+        klient.name = request.POST.get("name")
+        klient.age = request.POST.get("age")
+        klient.save()
+    return HttpResponseRedirect("/")
